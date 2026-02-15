@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, Route, Switch, useLocation } from "react-router-dom";
-import { HomePage } from "../app/screens/homePage"
+import { Route, Switch, useLocation } from "react-router-dom";
+import { HomePage } from "../app/screens/homePage";
 import { ProductsPage } from "./screens/productsPage";
 import { OrdersPage } from "./screens/ordersPage";
 import { UserPage } from "./screens/userPage";
@@ -13,7 +13,7 @@ import { HelpPage } from "./screens/helpPage";
 
 function App() {
   const location = useLocation();
-  console.log("location", location)
+  console.log("location", location);
 
   return (
     <>
@@ -40,10 +40,4 @@ function App() {
   );
 }
 
-
 export default App;
-
-
-
-
-
