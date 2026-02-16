@@ -2,21 +2,19 @@ import { Box, Button, Container, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
 export function HomeNavbar() {
-  const authMember = true;
+  const authMember = null;
 
   return (
     <div className="home-navbar">
       <Container className="navbar-container">
-
         <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/burak.svg" alt=""/>
+              <img className="brand-logo" src="/icons/burak.svg" alt="" />
             </NavLink>
           </Box>
 
-          <Stack
-            className="links">
+          <Stack className="links">
             <Box className={"hover-line"}>
               <NavLink to="/" activeClassName={"underline"}>
                 Home
@@ -37,9 +35,7 @@ export function HomeNavbar() {
             ) : null}
 
             {authMember ? (
-              <Box>
-                {" "}
-                className={"hover-line"}
+              <Box className={"hover-line"}>
                 <NavLink to="/member-page" activeClassName={"underline"}>
                   My Page
                 </NavLink>
@@ -59,7 +55,7 @@ export function HomeNavbar() {
                 </Button>
               </Box>
             ) : (
-              <img 
+              <img
                 className="user-avatar"
                 src={"/icons/default-user.svg"}
                 aria-haspopup={"true"}
@@ -68,7 +64,25 @@ export function HomeNavbar() {
             )}
           </Stack>
         </Stack>
-        <Stack>Detail</Stack>
+        <Stack className={"header-frame"}>
+          <Stack className={"detail"}>
+            <Box className={"head-main-txt"}>
+              World's Most Delicious Cousine
+            </Box>
+            <Box className={"wel-txt"}>The Choice, not just a choice</Box>
+            <Box className={"service-txt"}>24 hours service</Box>
+            <Box className={"signup"}>
+              {!authMember ? (
+                <Button variant={"contained"} className={"signup-button"}>
+                  SIGN UP
+                </Button>
+              ) : null}
+            </Box>
+          </Stack>
+          <Stack className={"logo-frame"}>
+            <div className={"logo-img"}></div>
+          </Stack>
+        </Stack>
       </Container>
     </div>
   );
