@@ -80,7 +80,7 @@ export function HomeNavbar() {
             </Box>
           </Stack>
           <Stack className={"logo-frame"}>
-            <div className={"logo-img"}></div>
+            <div className="logo-img"></div>
           </Stack>
         </Stack>
       </Container>
