@@ -158,7 +158,7 @@
   background: url("/public/img/logo.webp");
   background-size: contain;
   background-repeat: no-repeat;
-  filter: none;
+  filter: invert(25%);
 }
 
 
