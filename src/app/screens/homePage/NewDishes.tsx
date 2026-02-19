@@ -24,7 +24,8 @@ export default function NewDishes() {
             <Stack className={"cards-frame"}>
 
               <CssVarsProvider>
-                {newDishes.map((ele, index) => {
+                {newDishes.length !== 0 ? (
+                  newDishes.map((ele, index) => {
                   return(
                     <Card key={index} variant="outlined" className={"card"}>
                       <CardOverflow>
@@ -40,9 +41,12 @@ export default function NewDishes() {
                             <Typography className={"title"}>
                               {ele.productName}
                             </Typography>
-                            <Divider width="2" height="24" bg="#d9d9d9"/>
+
+                          <Divider width="2" height="24" bg="#d9d9d9"/>
+
                             <Typography className={"price"}>$12</Typography>
                           </Stack>
+
                           <Stack>
                             <Typography className={"views"}>
                               20
@@ -50,12 +54,15 @@ export default function NewDishes() {
                                 sx={{fontSize:20, marginLeft: "5px"}} />
                             </Typography>
                           </Stack>
+                          
                         </Stack>
                       </CardOverflow>
-
                     </Card>
                   );
-                })}
+                })
+                ):(
+                    <Box className="no-data">New products are not available now.</Box>
+                )}
               </CssVarsProvider>
 
             </Stack>
