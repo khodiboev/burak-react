@@ -34,7 +34,7 @@
   width: 320px;
   height: 48px;
   padding: 0 20px;
-  border-radius: 20px 0px 0px 20px;
+  border-radius: 20px;
   border: 1px solid grey;
   outline: none;
   background: #ececec;
@@ -44,8 +44,8 @@
 .products-page .avatar-big-box .search-btn {
   height: 48px;
   padding: 0 24px;
-  margin-left: 0.5px;
-  border-radius: 0px 20px 20px 0px;
+  margin-left: -40px;
+  border-radius: 20px;
   text-transform: uppercase;
   background: #2c2c2c;
   color: #e7b94c;
@@ -71,7 +71,7 @@
 
 .products-page .dishes-filter-section .order {
   padding: 10px 28px;
-  border-radius: 20px 20px 20px 0px;
+  border-radius: 10px;
   font-weight: 600;
   text-transform: none;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -104,11 +104,11 @@
 }
 
 .products-page .left-category-btn .order {
-  width: 80px;
-  height: 60px;
-  border-radius: 20px 20px 20px 0px;
-  writing-mode: horizontal-tb;
-  transform: rotate(0deg);
+  width: 60px;
+  height: 90px;
+  border-radius: 10px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
   font-weight: 600;
   text-transform: uppercase;
   display: flex;
@@ -118,16 +118,9 @@
   transition: all 0.5s ease;
 }
 
-.products-page .left-category-btn .order:hover{
-transform: translateY(-1px);
-  box-shadow:
-    0 0 40px rgb(251, 196, 95),
-    0 0 80px rgba(255, 255, 255, 0.08);
-}
-
 
 .products-page .list-category-section .product-wrapper {
-  flex: 1; /* qolgan joyni egallaydi */
+  flex: 1;
 }
 
 .products-page .product-card {
@@ -138,12 +131,6 @@ transform: translateY(-1px);
   cursor: pointer;
 }
 
-.products-page .product-card:hover {
-  transform: translateY(-8px);
-}
-
-
-
 
 .products-page .product-card .product-img {
   position: relative;
@@ -152,15 +139,9 @@ transform: translateY(-1px);
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  border-radius: 0px 50px 0px 50px;
+  border-radius: 0px 50px 0px 0px;
   box-shadow: 0;
   transition: all 0.5s ease;
-}
-.products-page .product-card .product-img:hover{
-    transform: translateY(-0.3px);
-  box-shadow:
-    0 0 40px rgb(251, 196, 95),
-    0 0 80px rgba(255, 255, 255, 0.08);
 }
 
 /* ---------- SALE BADGE ---------- */
@@ -272,7 +253,6 @@ transform: translateY(-1px);
   justify-content: center;
 }
 
-/* Base pagination item */
 
 .products-page .pagination-section .MuiPaginationItem-root {
   font-weight: 600;
@@ -359,16 +339,6 @@ transform: translateY(-1px);
 
   transition: all 0.4s ease;
 }
-
-/* Glow Hover Effect */
-
-.products-page .brand-card:hover {
-  transform: translateY(-5px);
-  box-shadow:
-    0 0 40px rgb(255, 206, 115),
-    0 0 80px rgba(255, 255, 255, 0.08);
-}
-
 /* Image Fit */
 
 .products-page .brand-card img {
