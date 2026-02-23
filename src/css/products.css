@@ -7,6 +7,7 @@
 
 /* ================= HEADER TOP ROW ================= */
 
+
 .products-page .avatar-big-box {
   width: 100%;
   margin: 70px 0 20px 0;
@@ -32,10 +33,10 @@
 
 .products-page .avatar-big-box .search-input {
   width: 320px;
-  height: 48px;
+  height: 40px;
   padding: 0 20px;
   border-radius: 20px;
-  border: 1px solid grey;
+  border: none;
   outline: none;
   background: #ececec;
   font-size: 14px;
@@ -48,8 +49,6 @@
   border-radius: 20px;
   text-transform: uppercase;
   background: #2c2c2c;
-  color: #e7b94c;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* ================= FILTER ROW ================= */
