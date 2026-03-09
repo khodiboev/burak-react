@@ -66,7 +66,7 @@ export default function PausedOrders() {
             </Box>
           );
         })}
-
+        
         {false && (
           <Box display={"flex"} flexDirection={"row"} justifyContent={"center"}>
             <img
@@ -75,7 +75,7 @@ export default function PausedOrders() {
               style={{ width: 300, height: 300 }}
             />
           </Box>
-        )}
+        )} 
       </Stack>
     </TabPanel>
   );

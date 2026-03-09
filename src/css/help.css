@@ -54,6 +54,7 @@
   border: 1px solid #ededed;
   box-shadow: 0px 20px 30px rgba(25, 25, 46, 0.04);
   border-radius: 8px;
+  border: 1px solid grey;
 }
 
 .rules-box .rules-frame {
@@ -91,6 +92,7 @@
   border: 1px solid #ededed;
   box-shadow: 0px 20px 30px rgba(25, 25, 46, 0.04);
   border-radius: 8px;
+  border: 1px solid grey;
 }
 
 .help-page .admin-letter-box .admin-letter-container {
@@ -154,7 +156,7 @@
   height: 60px;
   display: flex;
   background: #f8f8ff;
-  border: 1px solid #dddddd;
+  border: 1px solid grey;
   border-radius: 8px;
   font-family: "Verdana";
   font-style: normal;
@@ -171,7 +173,7 @@
   height: 150px;
   display: flex;
   background: #f8f8ff;
-  border: 1px solid #dddddd;
+  border: 1px solid grey;
   border-radius: 8px;
   font-family: "Verdana";
   font-style: normal;
