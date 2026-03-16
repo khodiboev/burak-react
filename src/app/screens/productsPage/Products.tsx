@@ -82,7 +82,7 @@ export default function Products() {
 
   const chooseDishHandler = (id: string) => {
     console.log("Chosen product: ", id);
-    history.push(`/product/${id}`);
+    history.push(`/products/${id}`);
   };
 
   return (
