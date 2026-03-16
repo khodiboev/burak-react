@@ -25,13 +25,12 @@ const actionDispatch = (dispatch: Dispatch) => ({
 });
 const chosenProductRetriever = createSelector(
   retrieveProducts,
-  (products) => products
+  (products) => products,
 );
 const restaurantRetriever = createSelector(
   retrieveRestaurant,
-  (products) => products
+  (products) => products,
 );
-
 
 export default function ChosenProduct() {
   return (
@@ -53,7 +52,7 @@ export default function ChosenProduct() {
                     <img className="slider-image" src={ele} alt="" />
                   </SwiperSlide>
                 );
-              }
+              },
             )}
           </Swiper>
         </Stack>
