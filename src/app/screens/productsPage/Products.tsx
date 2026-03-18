@@ -255,17 +255,19 @@ export default function Products(props: ProductsProps) {
                       >
                         <div className={"product-sale"}>{sizeVolume}</div>
 
-                        <Button className={"shop-btn"} onClick={(e) => {
-                          console.log("BUTTON PRESSED");
-                          e.stopPropagation();
-                          onAdd({
-                            _id: product._id,
-                            name: product.productName,
-                            price: product.productPrice,
-                            quantity: 1,
-                            image: product.productImages[0],
-                          });
-                        }}>
+                        <Button
+                          className={"shop-btn"}
+                          onClick={(e) => {
+                            onAdd({
+                              _id: product._id,
+                              name: product.productName,
+                              price: product.productPrice,
+                              quantity: 1,
+                              image: product.productImages[0],
+                            });
+                            e.stopPropagation();
+                          }}
+                        >
                           <img
                             src={"/icons/shopping-cart.svg"}
                             style={{ display: "flex" }}
