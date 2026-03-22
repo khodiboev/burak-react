@@ -234,6 +234,7 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
                 sx={{ marginTop: "27px", width: "120px" }}
                 variant={"extended"}
                 color={"primary"}
+                onClick={handleLoginRequest}
               >
                 <LoginIcon sx={{ mr: 1 }} />
                 Login
