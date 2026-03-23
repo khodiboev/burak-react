@@ -23,7 +23,7 @@ interface BasketProps {
 
 export default function Basket(props: BasketProps) {
   const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = props;
-  const { authMember } = useGlobals();
+  const { authMember, setOrderBuilder } = useGlobals();
   const history = useHistory();
   const itemsPrice = cartItems.reduce(
     (a: number, c: CartItem) => a + c.price * c.quantity,
@@ -52,8 +52,7 @@ export default function Basket(props: BasketProps) {
       await order.createOrder(cartItems);
 
       onDeleteAll();
-
-      //Refresh via context
+      setOrderBuilder(new Date());
       history.push("/orders");
     } catch (err) {
       console.log("Error, proceedOrderHandler: ", err);
@@ -166,7 +165,11 @@ export default function Basket(props: BasketProps) {
               <span className={"price"}>
                 Total: ${totalPrice} ({itemsPrice} + {shippingCost} shipping)
               </span>
-              <Button onClick={proceedOrderHandler} startIcon={<ShoppingCartIcon />} variant={"contained"}>
+              <Button
+                onClick={proceedOrderHandler}
+                startIcon={<ShoppingCartIcon />}
+                variant={"contained"}
+              >
                 Order
               </Button>
             </Box>

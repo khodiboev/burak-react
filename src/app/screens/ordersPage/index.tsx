@@ -15,19 +15,20 @@ import "../../../css/order.css";
 import { Order, OrderInquiry } from "../../../lib/types/orders";
 import { OrderStatus } from "../../../lib/enums/order.enum";
 import OrderService from "../../services/OrderService";
+import { useGlobals } from "../../hooks/useGlobals";
 
 /** REDUX SLICE & SELECTOR */
 const actionDispatch = (dispatch: Dispatch) => ({
   setPausedOrders: (data: Order[]) => dispatch(setPausedOrders(data)),
   setProcessOrders: (data: Order[]) => dispatch(setProcessOrders(data)),
   setFinishedOrders: (data: Order[]) => dispatch(setFinishedOrders(data)),
-
 });
 
 export default function OrdersPage() {
-  const {setPausedOrders, setProcessOrders, setFinishedOrders} = actionDispatch(useDispatch());
+  const { setPausedOrders, setProcessOrders, setFinishedOrders } =
+    actionDispatch(useDispatch());
+  const { orderBuilder } = useGlobals();
   const [value, setValue] = useState("1");
-
   const [orderInquery, setOrderInquery] = useState<OrderInquiry>({
     page: 1,
     limit: 5,
@@ -37,18 +38,21 @@ export default function OrdersPage() {
   useEffect(() => {
     const order = new OrderService();
 
-    order.getMyOrders({...orderInquery, orderStatus: OrderStatus.PAUSE})
-    .then((data) => setPausedOrders(data))
-    .catch((err) => console.log("Error, getMyOrders: ", err));
+    order
+      .getMyOrders({ ...orderInquery, orderStatus: OrderStatus.PAUSE })
+      .then((data) => setPausedOrders(data))
+      .catch((err) => console.log("Error, getMyOrders: ", err));
 
-    order.getMyOrders({...orderInquery, orderStatus: OrderStatus.PROCESS})
-    .then((data) => setProcessOrders(data))
-    .catch((err) => console.log("Error, getMyOrders: ", err));
+    order
+      .getMyOrders({ ...orderInquery, orderStatus: OrderStatus.PROCESS })
+      .then((data) => setProcessOrders(data))
+      .catch((err) => console.log("Error, getMyOrders: ", err));
 
-    order.getMyOrders({...orderInquery, orderStatus: OrderStatus.FINISH})
-    .then((data) => setFinishedOrders(data))
-    .catch((err) => console.log("Error, getMyOrders: ", err));
-  }, [orderInquery]);
+    order
+      .getMyOrders({ ...orderInquery, orderStatus: OrderStatus.FINISH })
+      .then((data) => setFinishedOrders(data))
+      .catch((err) => console.log("Error, getMyOrders: ", err));
+  }, [orderInquery, orderBuilder]);
 
   /** HANDLERS */
 
@@ -75,8 +79,8 @@ export default function OrdersPage() {
             </Box>
 
             <Stack className={"order-main-content"}>
-              <PausedOrders />
-              <ProcessOrders />
+              <PausedOrders setValue={setValue} />
+              <ProcessOrders setValue={setValue}/>
               <FinishedOrders />
             </Stack>
           </TabContext>
@@ -84,11 +88,9 @@ export default function OrdersPage() {
 
         {/* RIGHT SIDE */}
         <Stack className={"order-right"}>
-
           {/* USER INFO */}
           <Box className={"order-info-box"}>
             <Box className={"member-box"}>
-
               <div className={"order-user-img"}>
                 <img
                   src={"/icons/default-user.svg"}
@@ -114,7 +116,6 @@ export default function OrdersPage() {
                 <LocationOnIcon className="location-icon" />
                 <span>South Korea, Busan</span>
               </Box>
-
             </Box>
           </Box>
 

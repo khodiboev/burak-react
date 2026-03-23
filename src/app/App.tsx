@@ -11,11 +11,9 @@ import HelpPage from "./screens/helpPage";
 import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
-import Test from "./screens/Test";
 import useBasket from "./hooks/useBasket";
 import AuthenticationModal from "./components/auth";
 import { sweetErrorHandling, sweetTopSuccessAlert } from "../lib/sweetAlert";
-import { T } from "../lib/types/common";
 import { Messages } from "../lib/config";
 import MemberService from "./services/MemberService";
 import { useGlobals } from "./hooks/useGlobals";
@@ -51,7 +49,7 @@ function App() {
       setAuthMember(null);
     } catch (err) {
       console.log("Error, handleLogoutRequest: ", err);
-      sweetErrorHandling(Messages.error1);
+      sweetErrorHandling(Messages.error1).then();
     }
   };
 
