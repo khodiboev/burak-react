@@ -53,7 +53,7 @@ export function Settings() {
     try {
       if (!authMember) throw new Error(Messages.error2);
       if (
-        memberUpdateInput.memberNick === "" ||
+        memberUpdateInput.memberNick === "" || 
         memberUpdateInput.memberPhone === "" ||
         memberUpdateInput.memberAddress === "" ||
         memberUpdateInput.memberDesc === ""
